@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Triage AI | Clinical Command Center</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                ET
+            </div>
+
+            <div>
+                <h2>Emergency Triage</h2>
+                <span>AI Command Center</span>
+            </div>
+        </div>
+
+        <div class="sidebar-status">
+            <span class="status-dot"></span>
+            System Operational
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#assessment" class="nav-item active">
+                <span class="nav-icon">01</span>
+                Patient Assessment
+            </a>
+
+            <a href="#vitals" class="nav-item">
+                <span class="nav-icon">02</span>
+                Vital Monitoring
+            </a>
+
+            <a href="#results" class="nav-item">
+                <span class="nav-icon">03</span>
+                AI Assessment
+            </a>
+
+            <a href="#explainability" class="nav-item">
+                <span class="nav-icon">04</span>
+                Explainability
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="prototype-card">
+                <div class="prototype-title">
+                    Research Prototype
+                </div>
+
+                <p>
+                    AI-assisted emergency triage decision support.
+                </p>
+            </div>
+
+            <div class="sidebar-footer">
+                Emergency Triage AI v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="eyebrow">
+                    CLINICAL DECISION SUPPORT
+                </div>
+
+                <h1>Emergency Triage Command Center</h1>
+
+                <p>
+                    Multi-agent assessment and machine-learning assisted prioritization
+                </p>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="system-indicator">
+                    <span class="status-dot"></span>
+                    AI Engine Online
+                </div>
+
+                <div class="topbar-time">
+                    LIVE
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= KPI STRIP ================= -->
+
+        <section class="kpi-strip">
+
+            <div class="kpi-card">
+                <div class="kpi-label">SYSTEM</div>
+                <div class="kpi-value">ONLINE</div>
+                <div class="kpi-small">FastAPI backend</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">AI MODEL</div>
+                <div class="kpi-value">SVM</div>
+                <div class="kpi-small">ML classification</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">AGENTS</div>
+                <div class="kpi-value">04</div>
+                <div class="kpi-small">Clinical assessment agents</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">DECISION</div>
+                <div class="kpi-value">REAL-TIME</div>
+                <div class="kpi-small">Coordinator synthesis</div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PATIENT ASSESSMENT ================= -->
+
+        <section class="workspace-card" id="assessment">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="section-number">01</div>
+
+                    <h2>Patient Assessment</h2>
+
+                    <p>
+                        Enter the patient's demographic information and presenting complaint.
+                    </p>
+                </div>
+
+                <div class="section-status">
+                    INPUT REQUIRED
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label for="name">Patient Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter patient name"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        min="0"
+                        max="120"
+                        placeholder="Years"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Contact number"
+                    >
+                </div>
+
+                <div class="input-group wide-input">
+                    <label for="chiefcomplaint">
+                        Chief Complaint
+                    </label>
+
+                    <input
+                        type="text"
+                        id="chiefcomplaint"
+                        placeholder="Describe the primary complaint"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VITALS ================= -->
+
+        <section class="workspace-card" id="vitals">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="section-number">02</div>
+
+                    <h2>Vital Monitoring</h2>
+
+                    <p>
+                        Enter the patient's current clinical measurements.
+                    </p>
+                </div>
+
+                <div class="monitor-status">
+                    <span></span>
+                    MONITORING
+                </div>
+
+            </div>
+
+
+            <div class="vitals-grid">
+
+                <div class="vital-card temperature-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">TEMPERATURE</span>
+                        <span class="vital-unit">°C</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="temperature"
+                            step="0.1"
+                            placeholder="37.0"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        BODY TEMPERATURE
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">HEART RATE</span>
+                        <span class="vital-unit">BPM</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="heartrate"
+                            step="1"
+                            placeholder="72"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        HEART ACTIVITY
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">RESPIRATORY RATE</span>
+                        <span class="vital-unit">/MIN</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="resprate"
+                            step="1"
+                            placeholder="16"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        RESPIRATORY ACTIVITY
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card oxygen-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">OXYGEN SATURATION</span>
+                        <span class="vital-unit">%</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="o2sat"
+                            step="1"
+                            placeholder="98"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        BLOOD OXYGEN
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card blood-pressure">
+
+                    <div class="vital-top">
+                        <span class="vital-label">SYSTOLIC BP</span>
+                        <span class="vital-unit">MMHG</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="sbp"
+                            step="1"
+                            placeholder="120"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        BLOOD PRESSURE
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">DIASTOLIC BP</span>
+                        <span class="vital-unit">MMHG</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="dbp"
+                            step="1"
+                            placeholder="80"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        BLOOD PRESSURE
+                    </div>
+
+                </div>
+
+
+                <div class="vital-card pain-card">
+
+                    <div class="vital-top">
+                        <span class="vital-label">PAIN SCORE</span>
+                        <span class="vital-unit">0–10</span>
+                    </div>
+
+                    <div class="vital-input">
+                        <input
+                            type="number"
+                            id="pain_numeric"
+                            min="0"
+                            max="10"
+                            step="1"
+                            placeholder="0"
+                        >
+                    </div>
+
+                    <div class="vital-range">
+                        NUMERIC PAIN SCALE
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION BAR -->
+
+            <div class="action-bar">
+
+                <div class="action-info">
+                    <strong>Ready for AI assessment?</strong>
+                    <span>
+                        The multi-agent coordinator will evaluate the submitted patient data.
+                    </span>
+                </div>
+
+                <div class="action-buttons">
+
+                    <button
+                        type="button"
+                        class="btn secondary-btn"
+                        id="resetBtn"
+                        onclick="resetForm()"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn primary-btn"
+                        id="analyzeBtn"
+                        onclick="analyzePatient()"
+                    >
+                        Analyze Patient
+                        <span class="btn-arrow">→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="loading" class="loading-box">
+                <div class="loading-spinner"></div>
+                <div>
+                    <strong>Analyzing patient...</strong>
+                    <span>
+                        Coordinating vital, symptom, risk and resource agents.
+                    </span>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="error-box"></div>
+
+        </section>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <section
+            class="results-section"
+            id="resultSection"
+        >
+
+            <div class="results-header">
+
+                <div>
+                    <div class="section-number">03</div>
+
+                    <h2>AI Assessment Result</h2>
+
+                    <p>
+                        Coordinated emergency triage assessment
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn print-btn"
+                    id="printReportBtn"
+                    onclick="printReport()"
+                >
+                    Print Report
+                </button>
+
+            </div>
+
+
+            <!-- PATIENT SUMMARY -->
+
+            <div class="patient-summary-card">
+
+                <div class="patient-avatar">
+                    PT
+                </div>
+
+                <div class="patient-summary-details">
+
+                    <span class="summary-label">
+                        PATIENT
+                    </span>
+
+                    <strong id="resultPatientName">
+                        —
+                    </strong>
+
+                    <div class="patient-meta">
+
+                        <span>
+                            Age:
+                            <strong id="resultPatientAge">—</strong>
+                        </span>
+
+                        <span>
+                            Mobile:
+                            <strong id="resultPatientMobile">—</strong>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-item">
+
+                    <span>Assessment</span>
+
+                    <strong>AI TRIAGE</strong>
+
+                </div>
+
+                <div class="summary-item">
+
+                    <span>Model</span>
+
+                    <strong>SVM</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRIORITY -->
+
+            <div class="priority-layout">
+
+                <div
+                    class="priority-box"
+                    id="priorityBox"
+                >
+
+                    <div class="priority-caption">
+                        FINAL TRIAGE PRIORITY
+                    </div>
+
+                    <div
+                        class="priority-value"
+                        id="priority"
+                    >
+                        —
+                    </div>
+
+                    <div class="priority-description">
+                        Coordinator decision after multi-agent assessment
+                    </div>
+
+                </div>
+
+
+                <div class="confidence-grid">
+
+                    <div class="metric-card">
+
+                        <div class="metric-title">
+                            ML PREDICTION
+                        </div>
+
+                        <div
+                            class="metric-value"
+                            id="mlPrediction"
+                        >
+                            —
+                        </div>
+
+                        <div class="metric-progress">
+                            <div
+                                id="mlConfidenceBar"
+                                class="metric-progress-fill"
+                            ></div>
+                        </div>
+
+                        <div class="metric-footer">
+
+                            <span>Confidence</span>
+
+                            <strong>
+                                <span id="mlConfidence">—</span>%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <div class="metric-title">
+                            COORDINATOR CONFIDENCE
+                        </div>
+
+                        <div
+                            class="metric-value"
+                            id="coordinatorConfidence"
+                        >
+                            —
+                        </div>
+
+                        <div class="metric-progress">
+                            <div
+                                id="coordinatorConfidenceBar"
+                                class="metric-progress-fill"
+                            ></div>
+                        </div>
+
+                        <div class="metric-footer">
+
+                            <span>Decision confidence</span>
+
+                            <strong>
+                                <span id="coordinatorConfidenceText">—</span>%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAFETY OVERRIDE -->
+
+            <div class="safety-card">
+
+                <div class="safety-icon">
+                    !
+                </div>
+
+                <div class="safety-content">
+
+                    <div class="safety-heading">
+
+                        <span>
+                            SAFETY OVERRIDE
+                        </span>
+
+                        <strong id="safetyOverrideStatus">
+                            NOT TRIGGERED
+                        </strong>
+
+                    </div>
+
+                    <p id="safetyOverride">
+                        No critical safety override was applied.
+                    </p>
+
+                    <div
+                        id="overrideReasons"
+                        class="override-reasons"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AGENT ORCHESTRATION -->
+
+            <div class="result-card">
+
+                <div class="result-card-header">
+
+                    <div>
+                        <span class="card-kicker">
+                            MULTI-AGENT SYSTEM
+                        </span>
+
+                        <h3>Agent Orchestration</h3>
+
+                        <p>
+                            Independent assessments synthesized by the coordinator.
+                        </p>
+                    </div>
+
+                    <div class="agent-count">
+                        04 AGENTS
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="agents"
+                    class="agents-container"
+                >
+
+                    <div class="agent-card">
+                        <div class="agent-number">01</div>
+
+                        <div class="agent-content">
+                            <span>Vital Signs Agent</span>
+                            <strong id="vitalAgent">—</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="agent-card">
+                        <div class="agent-number">02</div>
+
+                        <div class="agent-content">
+                            <span>Symptoms Agent</span>
+                            <strong id="symptomAgent">—</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="agent-card">
+                        <div class="agent-number">03</div>
+
+                        <div class="agent-content">
+                            <span>Risk Agent</span>
+                            <strong id="riskAgent">—</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="agent-card">
+                        <div class="agent-number">04</div>
+
+                        <div class="agent-content">
+                            <span>Resource Agent</span>
+                            <strong id="resourceAgent">—</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINDINGS + RESOURCES -->
+
+            <div class="two-column-results">
+
+                <div class="result-card">
+
+                    <div class="result-card-header compact">
+
+                        <div>
+                            <span class="card-kicker">
+                                CLINICAL SIGNALS
+                            </span>
+
+                            <h3>Clinical Findings</h3>
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="findings"
+                        class="findings-list"
+                    ></div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <div class="result-card-header compact">
+
+                        <div>
+                            <span class="card-kicker">
+                                HOSPITAL CAPACITY
+                            </span>
+
+                            <h3>Resource Availability</h3>
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="resourceFindings"
+                        class="findings-list"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLAINABILITY -->
+
+            <div
+                class="result-card explainability-card"
+                id="explainability"
+            >
+
+                <div class="result-card-header">
+
+                    <div>
+                        <span class="card-kicker">
+                            EXPLAINABLE AI
+                        </span>
+
+                        <h3>Decision Explanation</h3>
+
+                        <p>
+                            Human-readable reasoning generated from the triage assessment.
+                        </p>
+                    </div>
+
+                    <div class="xai-badge">
+                        XAI
+                    </div>
+
+                </div>
+
+                <div
+                    id="explanation"
+                    class="explanation-text"
+                >
+                    —
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISCLAIMER -->
+
+        <footer class="main-footer">
+
+            <strong>
+                Research Prototype
+            </strong>
+
+            <span>
+                This system is intended for academic and research demonstration only
+                and is not a substitute for professional medical judgment.
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- AI CLARIFICATION CHATBOT -->
+<!-- ===================================================== -->
+
+<button
+    id="chatToggle"
+    class="chat-toggle"
+    type="button"
+    onclick="toggleChat()"
+    aria-label="Open AI clarification assistant"
+>
+
+    <span class="chat-toggle-icon">
+        AI
+    </span>
+
+    <span class="chat-toggle-text">
+        AI Assistant
+    </span>
+
+</button>
+
+
+<div
+    id="chatWindow"
+    class="chat-window"
+>
+
+    <!-- CHAT HEADER -->
+
+    <div class="chat-header">
+
+        <div class="chat-header-info">
+
+            <div class="chat-avatar">
+                AI
+            </div>
+
+            <div>
+
+                <strong>
+                    Triage Assistant
+                </strong>
+
+                <span>
+                    Clarification support
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="chat-close"
+            onclick="toggleChat()"
+            aria-label="Close chat"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- CHAT BODY -->
+
+    <div
+        id="chatMessages"
+        class="chat-messages"
+    >
+
+        <div class="chat-message bot">
+
+            <div class="message-avatar">
+                AI
+            </div>
+
+            <div class="message-bubble">
+
+                <strong>Hello.</strong>
+
+                <p>
+                    I'm the Triage Clarification Assistant. Ask me about the
+                    patient's assessment, priority, ML prediction, safety override,
+                    agents, findings or resources.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK QUESTIONS -->
+
+    <div class="quick-questions">
+
+        <button
+            type="button"
+            onclick="quickChat('Why is this patient high priority?')"
+        >
+            Why HIGH?
+        </button>
+
+        <button
+            type="button"
+            onclick="quickChat('What does the ML confidence mean?')"
+        >
+            ML confidence
+        </button>
+
+        <button
+            type="button"
+            onclick="quickChat('Explain the safety override.')"
+        >
+            Safety override
+        </button>
+
+        <button
+            type="button"
+            onclick="quickChat('Explain the agents.')"
+        >
+            Agents
+        </button>
+
+    </div>
+
+
+    <!-- CHAT INPUT -->
+
+    <div class="chat-input-area">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask a clarification..."
+            autocomplete="off"
+            onkeydown="handleChatKey(event)"
+        >
+
+        <button
+            type="button"
+            id="chatSend"
+            onclick="sendChatMessage()"
+        >
+            →
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
